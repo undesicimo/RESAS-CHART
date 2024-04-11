@@ -1,0 +1,61 @@
+figure {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+figure.Skeleton {
+	width: 100%;
+	min-height: 500px;
+	opacity: 0.8;
+}
+
+p.Skeleton-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+section.Chart {
+	width: 100%;
+	height: 500px;
+	animation: fadeIn 0.5s;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+figure.Chart-wrapper {
+	position: relative;
+	width: 100%;
+	height: 500px;
+}
+
+span.Chart-XAxisLabel {
+	position: absolute;
+	bottom: 25px;
+	right: 10px;
+}
+
+span.Chart-YAxisLabel {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+}
+
+div.LineChart-wrapper {
+	height: 500px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+@media (max-width: 600px) {
+	figure.Chart-wrapper {
+		width: 800px;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+}
