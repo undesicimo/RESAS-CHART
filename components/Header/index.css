@@ -1,0 +1,10 @@
+header {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	width: 100svw;
+	height: 50px;
+	font-size: clamp(1.3rem, 2.5vw, 2rem);
+	background-color: var(--bg-surface-neutral);
+}
