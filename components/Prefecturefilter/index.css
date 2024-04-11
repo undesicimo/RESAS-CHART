@@ -1,0 +1,74 @@
+.PrefectureFilter-wrapper {
+	padding-left: 40px;
+	padding-right: 40px;
+	position: relative;
+}
+
+.PrefectureFilter-options-wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.PrefectureFilter-label-wrapper {
+	position: relative;
+}
+.PrefectureFilter-label-wrapper svg {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+	.PrefectureFilter-options-wrapper {
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	}
+	.PrefectureFilter-label-wrapper {
+		width: 100px;
+	}
+	.PrefectureFilter-label-wrapper svg {
+		right: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	.PrefectureFilter-options-wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.PrefectureFilter-options-wrapper {
+		grid-template-columns: repeat(3, minmax(100px, 1fr));
+	}
+	.PrefectureFilter-label-wrapper {
+		width: 100px;
+	}
+	.PrefectureFilter-label-wrapper svg {
+		right: 10px;
+	}
+}
+
+@media (max-width: 400px) {
+	.PrefectureFilter-options-wrapper {
+		grid-template-columns: repeat(2, minmax(100px, 1fr));
+	}
+}
+
+.PrefectureFilter-options {
+	display: flex;
+	gap: 10px;
+}
+
+.prefecturefilter-options-label {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+button.clearButton {
+	font-size: 16px;
+	font-weight: 500;
+	position: absolute;
+	right: 40px;
+	top: 5px;
+	border: none;
+	text-decoration: underline;
+}
