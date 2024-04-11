@@ -20,7 +20,7 @@ export default function Charts({ selectedPrefectures }: ChartsProps) {
 	}
 
 	if (error) {
-		window.alert(error.error.message);
+		window.alert(error.error?.message);
 		return null;
 	}
 
