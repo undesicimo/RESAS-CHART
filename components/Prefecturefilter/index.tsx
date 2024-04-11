@@ -11,7 +11,7 @@ export default function PrefectureFilter({
 	setSelectedPrefectures,
 	selectedPrefectures,
 }: PrefectureFilter) {
-	const { data } = usePrefectureOptions();
+	const { data, isError, isPending, error } = usePrefectureOptions();
 	const onCheckChaged = (
 		e: ChangeEvent<HTMLInputElement>,
 		prefCode: number
@@ -29,6 +29,36 @@ export default function PrefectureFilter({
 	const onClearButtonClicked = () => {
 		setSelectedPrefectures([]);
 	};
+
+	if (isPending) {
+		return (
+			<div
+				style={{
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					minHeight: '100px',
+				}}>
+				{'データ取得中...'}
+			</div>
+		);
+	}
+
+	if (isError) {
+		window.alert(error.message);
+		return (
+			<div
+				style={{
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					minHeight: '100px',
+					color: 'red',
+				}}>
+				{'データ取得に失敗しました、再度お試しください。'}
+			</div>
+		);
+	}
 
 	return (
 		<section className={`PrefectureFilter-wrapper`}>

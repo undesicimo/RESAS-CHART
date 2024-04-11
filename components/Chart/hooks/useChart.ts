@@ -37,6 +37,7 @@ export function useChart({ selectedPrefectures }: Params) {
 			return {
 				data: results.map(result => result.data),
 				pending: results.some(result => result.isPending),
+				error: results.find(result => result.isError),
 			};
 		},
 	});

@@ -7,14 +7,21 @@ interface ChartsProps {
 }
 
 export default function Charts({ selectedPrefectures }: ChartsProps) {
-	const { data, pending } = useChart({ selectedPrefectures });
+	const { data, pending, error } = useChart({ selectedPrefectures });
 
 	if (pending) {
 		return (
-			<figure className='Skeleton'>
-				<p className='Skeleton-text'>{'データ取得中...'}</p>
-			</figure>
+			<section className='Chart'>
+				<figure className='Chart-wrapper'>
+					<p className='Skeleton-text'>{'データ取得中...'}</p>
+				</figure>
+			</section>
 		);
+	}
+
+	if (error) {
+		window.alert(error.error.message);
+		return null;
 	}
 
 	return (

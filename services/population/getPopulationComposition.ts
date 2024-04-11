@@ -25,5 +25,10 @@ export async function getPopulationComposition({
 	const res = await fetch(
 		`${process.env.APP_BASE_URL}/api/population?prefCode=${prefCode}`
 	);
+
+	if (!res.ok) {
+		throw new Error('データの取得が失敗しました、再度お試し下さい');
+	}
+
 	return res.json();
 }

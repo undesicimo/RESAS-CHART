@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const PREFECTURE_FETCH_KEY = 'PREFECTURE_FETCH_KEY';
 export function usePrefectureOptions() {
-	const { data } = useQuery({
+	const results = useQuery({
 		queryFn: async () => {
 			const res = await getPrefectures();
 			return res.result.map(prefecture => ({
@@ -17,7 +17,7 @@ export function usePrefectureOptions() {
 		queryKey: [PREFECTURE_FETCH_KEY],
 	});
 
-	return { data };
+	return results;
 }
 
 const getLineStrokeColor = () => {

@@ -5,12 +5,6 @@ figure {
 	justify-content: center;
 }
 
-figure.Skeleton {
-	width: 100%;
-	min-height: 500px;
-	opacity: 0.8;
-}
-
 p.Skeleton-text {
 	position: absolute;
 	top: 50%;
