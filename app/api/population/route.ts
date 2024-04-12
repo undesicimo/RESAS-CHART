@@ -1,3 +1,4 @@
+import { trimSlash } from '@/common/urlUtils';
 import { type NextRequest } from 'next/server';
 
 export async function GET(request: NextRequest) {
@@ -8,7 +9,9 @@ export async function GET(request: NextRequest) {
 	}
 
 	const res = await fetch(
-		`${process.env.RESAS_BASE_URL}/api/v1/population/composition/perYear?cityCode=-&prefCode=${prefCode}`,
+		`${trimSlash(
+			process.env.RESAS_BASE_URL
+		)}/api/v1/population/composition/perYear?cityCode=-&prefCode=${prefCode}`,
 		{
 			headers: {
 				'X-API-KEY': process.env.RESAS_API_KEY,

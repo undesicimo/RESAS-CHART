@@ -1,3 +1,5 @@
+import { trimSlash } from '@/common/urlUtils';
+
 type PopulationCompositionData = Array<{
 	year: number;
 	value: number;
@@ -23,7 +25,9 @@ export async function getPopulationComposition({
 	prefCode,
 }: Params): Promise<PopulationCompositionResponse> {
 	const res = await fetch(
-		`${process.env.APP_BASE_URL}/api/population?prefCode=${prefCode}`
+		`${trimSlash(
+			process.env.NEXT_PUBLIC_APP_BASE_URL
+		)}/api/population?prefCode=${prefCode}`
 	);
 
 	if (!res.ok) {
