@@ -3,11 +3,12 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
+		"dev": "bash scripts/dev_up.sh",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"compile": "tsc"
+		"compile": "tsc",
+		"container:start": "bash scripts/container_up.sh"
 	},
 	"dependencies": {
 		"@nivo/core": "^0.85.1",

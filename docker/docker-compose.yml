@@ -1,0 +1,13 @@
+version: '1'
+
+services:
+  japan_by_prefecture_chart:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    env_file:
+      - ../.env.local
+      - ../.env.production
+    image: japan_by_prefecture_chart
+    ports:
+      - '3000:3000'
