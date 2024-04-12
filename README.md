@@ -7,7 +7,7 @@
 
 ## 最初に
 
-- `env.local.sample`を参考し、root 配下にて`env.local`を作成してください。
+- `.env.local.sample`を参考し、root 配下にて`.env.local`を作成してください。
 
 > [!IMPORTANT]  
 > RESAS API の API キーが必要です。[こちら](https://opendata.resas-portal.go.jp/)に登録し、取得してください。
